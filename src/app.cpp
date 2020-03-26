@@ -105,22 +105,23 @@ void dispalyOneProple(AddressBooks *abs)
 };
 
 // 修改一个联系人
-void update(AddressBooks *abs){
+void update(AddressBooks *abs)
+{
     string name;
     if (abs->peoplenum <= 0)
     {
         cout << "暂无数据" << endl;
         return;
     };
-    cout << "请输入你要修改的联系人名字" << endl; 
-        cin >> name;
+    cout << "请输入你要修改的联系人名字" << endl;
+    cin >> name;
     int index = findOnepeopleIndex(abs, name);
     if (index < 0)
     {
         cout << "无此人" << endl;
         return;
     }
-       string name;
+    string name;
     string phone;
     int age;
     int sex;
@@ -130,7 +131,7 @@ void update(AddressBooks *abs){
     abs->addressp[index].name = name;
     cout << "请输入联系人新年龄" << endl;
     cin >> age;
-    abs->addressp[index].age = age; 
+    abs->addressp[index].age = age;
     cout << "联系人联系新地址" << endl;
     cin >> add;
     abs->addressp[index].add = add;
@@ -162,9 +163,9 @@ void deleteOnePeople(AddressBooks *abs)
         // 真删除的地方
         for (int i = index; i < abs->peoplenum; i++)
         {
-            abs->addressp[i] = abs->addressp[i+1];
+            abs->addressp[i] = abs->addressp[i + 1];
         }
-         --abs->peoplenum;
+        --abs->peoplenum;
         cout << "删除成功" << endl;
     }
 }
