@@ -8,16 +8,24 @@
             "args": [
                 "-g",
                 "${file}",
+                "${fileDirname}\\workManager.cpp",
+                "${fileDirname}\\Employee.cpp",
+                "${fileDirname}\\Boss.cpp",    
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
+                "-I", "D:\\code\\cPlusPlus\\head",
             ],
+            
             "options": {
                 "cwd": "C:\\mingw64\\bin"
             },
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": "build"
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
